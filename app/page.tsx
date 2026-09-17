@@ -13,10 +13,10 @@ export default function Home() {
           <h2>About</h2>
           <p>
             Ryan is a senior at UH Manoa studying computer science, with a
-            focus on building practical, well-crafted software. He enjoys
+            focus on building practical, well-crafted software. She enjoys
             working across the stack, from designing clean user interfaces to
             reasoning about the systems that power them. Outside of
-            coursework, he likes exploring new tools and frameworks that make
+            coursework, she likes exploring new tools and frameworks that make
             developers more productive.
           </p>
         </section>
@@ -25,7 +25,7 @@ export default function Home() {
           <h2>This semester</h2>
           {/*
             Placeholder items — Ryan Rankin should replace these three
-            entries with his real, current coursework, project, and
+            entries with her real, current coursework, project, and
             post-graduation plans.
           */}
           <ul>
