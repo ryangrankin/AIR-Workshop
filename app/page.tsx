@@ -10,6 +10,15 @@ export default function Home() {
 
       <main>
         <section className="section">
+          <h2>This semester</h2>
+          <ul>
+            <li>SLS 480E</li>
+            <li>my AIR project</li>
+            <li>bartending</li>
+          </ul>
+        </section>
+
+        <section className="section">
           <h2>About</h2>
           <p>
             Ryan is a senior at UH Manoa studying computer science, with a
@@ -20,25 +29,11 @@ export default function Home() {
             developers more productive.
           </p>
         </section>
-
-        <section className="section">
-          <h2>This semester</h2>
-          {/*
-            Placeholder items — Ryan Rankin should replace these three
-            entries with her real, current coursework, project, and
-            post-graduation plans.
-          */}
-          <ul>
-            <li>Taking Operating Systems and Software Engineering coursework</li>
-            <li>Building a capstone project with a small team</li>
-            <li>Preparing for technical interviews and grad school applications</li>
-          </ul>
-        </section>
       </main>
 
       <footer className="footer">
         <p>
-          Ryan Rankin &middot; {year}
+          Ryan Rankin &middot; {year} &middot; Built with Claude Code
         </p>
       </footer>
     </>
