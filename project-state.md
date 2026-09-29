@@ -5,6 +5,7 @@ Last updated: 2026-09-29
 - The Next.js site (App Router, TypeScript, plain CSS) is live at https://airworkshop.vercel.app, deployed on Vercel.
 - A Supabase project exists and is linked to the repo.
 - A person can open the live site, click Sign up, and create an account with an email and a password; because email confirmation is off, they land straight on /tasks with their email shown at the top. They can click Sign out, and typing /tasks into the address bar after that shows the login page instead of the tasks page. Typing the right email with a wrong password shows an error message and keeps them on the login page. Once logged in, they can close the tab, open the site again in a new tab, and they are still signed in.
+- Signed in, a person can type a study task, pick one of six skills (Reading, Writing, Listening, Speaking, Vocabulary, Grammar) from a menu, and click Add to see it appear in their list labelled with that skill. They can tick a task's checkbox, reload the page, and it stays ticked. Signing in on a different browser shows the same tasks with the same ticks, and a second, separate account sees an empty list with none of the first account's tasks.
 
 ## Broken or flaky
 - Nothing known to be broken.
