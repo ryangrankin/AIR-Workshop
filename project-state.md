@@ -4,7 +4,7 @@ Last updated: 2026-09-29
 ## Works
 - The Next.js site (App Router, TypeScript, plain CSS) is live at https://airworkshop.vercel.app, deployed on Vercel.
 - A Supabase project exists and is linked to the repo.
-- Slice 1 (sign up and log in) is built on branch claude/slice-1-signup-login and open as a pull request, titled "Slice 1: sign up and log in". Not merged yet — check its done-criteria on the PR's preview link before merging.
+- A person can open the live site, click Sign up, and create an account with an email and a password; because email confirmation is off, they land straight on /tasks with their email shown at the top. They can click Sign out, and typing /tasks into the address bar after that shows the login page instead of the tasks page. Typing the right email with a wrong password shows an error message and keeps them on the login page. Once logged in, they can close the tab, open the site again in a new tab, and they are still signed in.
 
 ## Broken or flaky
 - Nothing known to be broken.
