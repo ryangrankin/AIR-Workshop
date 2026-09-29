@@ -1,8 +1,15 @@
+import Link from "next/link";
+
 export default function Home() {
   const year = new Date().getFullYear();
 
   return (
     <>
+      <nav className="site-nav">
+        <Link href="/signup">Sign up</Link>
+        <Link href="/login">Log in</Link>
+      </nav>
+
       <header className="hero">
         <h1>Ryan Rankin</h1>
         <p>a senior at UH Manoa studying computer science.</p>
