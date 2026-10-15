@@ -10,12 +10,22 @@ interface TaskItemProps {
   text: string;
   skill: Skill;
   done: boolean;
+  dueDate: string | null;
 }
 
-export default function TaskItem({ id, text, skill, done }: TaskItemProps) {
+export default function TaskItem({
+  id,
+  text,
+  skill,
+  done,
+  dueDate,
+}: TaskItemProps) {
   const [checked, setChecked] = useState(done);
   const [, startTransition] = useTransition();
   const router = useRouter();
+
+  const overdue =
+    !checked && !!dueDate && dueDate < new Date().toISOString().slice(0, 10);
 
   function handleChange() {
     const next = !checked;
@@ -27,12 +37,13 @@ export default function TaskItem({ id, text, skill, done }: TaskItemProps) {
   }
 
   return (
-    <li className="task-item">
+    <li className={overdue ? "task-item task-item-overdue" : "task-item"}>
       <label>
         <input type="checkbox" checked={checked} onChange={handleChange} />
         <span className={checked ? "task-text task-text-done" : "task-text"}>
           {text}
         </span>
+        {dueDate && <span className="task-due">Due {dueDate}</span>}
       </label>
       <span className="skill-tag">{skill}</span>
     </li>

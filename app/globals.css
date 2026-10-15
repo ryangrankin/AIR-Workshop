@@ -232,7 +232,8 @@ main {
   border-radius: 6px;
 }
 
-.add-task-form select {
+.add-task-form select,
+.add-task-form input[type="date"] {
   padding: 0.65rem 0.75rem;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -274,6 +275,20 @@ main {
 .task-text-done {
   color: var(--muted);
   text-decoration: line-through;
+}
+
+.task-due {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.task-item-overdue {
+  border-bottom-color: #b3261e;
+}
+
+.task-item-overdue .task-due {
+  color: #b3261e;
+  font-weight: 600;
 }
 
 .skill-tag {
