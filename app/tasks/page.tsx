@@ -11,12 +11,14 @@ interface Task {
   text: string;
   skill: Skill;
   done: boolean;
+  due_date: string | null;
   created_at: string;
 }
 
 interface List {
   id: string;
   name: string;
+  due_date: string | null;
 }
 
 interface TasksPageProps {
@@ -37,7 +39,7 @@ export default async function TasksPage({ searchParams }: TasksPageProps) {
 
   const { data: lists } = await supabase
     .from("lists")
-    .select("id, name")
+    .select("id, name, due_date")
     .order("created_at", { ascending: true })
     .returns<List[]>();
 
@@ -47,7 +49,7 @@ export default async function TasksPage({ searchParams }: TasksPageProps) {
   const { data: tasks } = currentListId
     ? await supabase
         .from("tasks")
-        .select("id, text, skill, done, created_at")
+        .select("id, text, skill, done, due_date, created_at")
         .eq("list_id", currentListId)
         .order("created_at", { ascending: true })
         .returns<Task[]>()
@@ -68,6 +70,7 @@ export default async function TasksPage({ searchParams }: TasksPageProps) {
             }
           >
             {list.name}
+            {list.due_date ? ` (due ${list.due_date})` : ""}
           </Link>
         ))}
 
@@ -75,6 +78,7 @@ export default async function TasksPage({ searchParams }: TasksPageProps) {
           <summary>New list</summary>
           <form action={createList}>
             <input type="text" name="name" placeholder="List name" required />
+            <input type="date" name="due_date" />
             <button type="submit">Save</button>
           </form>
         </details>
@@ -103,6 +107,7 @@ export default async function TasksPage({ searchParams }: TasksPageProps) {
                 </option>
               ))}
             </select>
+            <input type="date" name="due_date" />
             <button type="submit">Add</button>
           </form>
 
@@ -114,6 +119,7 @@ export default async function TasksPage({ searchParams }: TasksPageProps) {
                 text={task.text}
                 skill={task.skill}
                 done={task.done}
+                dueDate={task.due_date}
               />
             ))}
           </ul>

@@ -9,6 +9,7 @@ export async function addTask(formData: FormData) {
   const text = formData.get("text");
   const skill = formData.get("skill");
   const listId = formData.get("list_id");
+  const dueDate = formData.get("due_date");
 
   if (typeof text !== "string" || text.trim() === "") return;
   if (typeof skill !== "string" || !isSkill(skill)) return;
@@ -25,6 +26,7 @@ export async function addTask(formData: FormData) {
     text: text.trim(),
     skill,
     list_id: listId,
+    due_date: typeof dueDate === "string" && dueDate !== "" ? dueDate : null,
   });
 
   revalidatePath("/tasks");
@@ -32,6 +34,7 @@ export async function addTask(formData: FormData) {
 
 export async function createList(formData: FormData) {
   const name = formData.get("name");
+  const dueDate = formData.get("due_date");
 
   if (typeof name !== "string" || name.trim() === "") return;
 
@@ -43,7 +46,11 @@ export async function createList(formData: FormData) {
 
   const { data: list } = await supabase
     .from("lists")
-    .insert({ user_id: user.id, name: name.trim() })
+    .insert({
+      user_id: user.id,
+      name: name.trim(),
+      due_date: typeof dueDate === "string" && dueDate !== "" ? dueDate : null,
+    })
     .select("id")
     .single();
 
