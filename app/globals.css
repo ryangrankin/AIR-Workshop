@@ -165,6 +165,58 @@ main {
   padding: 3rem 1.5rem;
 }
 
+.list-menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.list-link {
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+}
+
+.list-link-active {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.new-list summary {
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.new-list form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.new-list input {
+  padding: 0.5rem 0.65rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.new-list button {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 .add-task-form {
   display: flex;
   flex-wrap: wrap;
